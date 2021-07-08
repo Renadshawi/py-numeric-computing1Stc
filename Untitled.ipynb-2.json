@@ -1,0 +1,577 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "0a0d7e25",
+   "metadata": {},
+   "source": [
+    "part 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "496e8280",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "4b43ab54",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 2 3 4 5 6 7 8 9]\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = np.array([1,2,3,4,5,6,7,8,9])\n",
+    "print(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "d88407b0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(9,)\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(a.shape)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "ab38fb07",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "int64\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(a.dtype)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "c0c3ebac",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[ 1.  2.  3.  4.  5.  6.  7.  8.  9. 10. 11. 12.]\n"
+     ]
+    }
+   ],
+   "source": [
+    "b = np.array([1,2,3,4,5,6,7,8,9,10,11,12], dtype = float)\n",
+    "print(b)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "13ab03bd",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "float64\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(b.dtype)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "47a24f3e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[1 2 3 4]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "row_vector = np.array([[1, 2, 3, 4]])\n",
+    "print(row_vector)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "afd3176e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[1]\n",
+      " [2]\n",
+      " [3]\n",
+      " [4]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "column_vector = np.array([[1], [2], [3], [4]])\n",
+    "print(column_vector)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "1b95b6ba",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[1 2 3]\n",
+      " [4 5 6]\n",
+      " [7 8 9]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "c = a.reshape(3,3)\n",
+    "print(c)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "46718804",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[[ 1.  2.  3.]\n",
+      "  [ 4.  5.  6.]]\n",
+      "\n",
+      " [[ 7.  8.  9.]\n",
+      "  [10. 11. 12.]]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "d = b.reshape(2,2,3)\n",
+    "print(d)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "655b840c",
+   "metadata": {},
+   "source": [
+    "Part 2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "fbee8b69",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The shape of array a is (9,).\n",
+      "The shape of array b is (12,).\n",
+      "The shape of array c is (3, 3).\n",
+      "The shape of array d is (2, 2, 3).\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"The shape of array a is \" + str(a.shape) + \".\")\n",
+    "print(\"The shape of array b is \" + str(b.shape) + \".\")\n",
+    "print(\"The shape of array c is \" + str(c.shape) + \".\")\n",
+    "print(\"The shape of array d is \" + str(d.shape) + \".\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "97970c9d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The number of dimensions of array a is 1.\n",
+      "The number of dimensions of array b is 1.\n",
+      "The number of dimensions of array c is 2.\n",
+      "The number of dimensions of array d is 3.\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"The number of dimensions of array a is \" + str(a.ndim) + \".\")\n",
+    "print(\"The number of dimensions of array b is \" + str(b.ndim) + \".\")\n",
+    "print(\"The number of dimensions of array c is \" + str(c.ndim) + \".\")\n",
+    "print(\"The number of dimensions of array d is \" + str(d.ndim) + \".\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "244a6949",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Array a contains 9 elements, of type int64.\n",
+      "Array b contains 12 elements, of type float64.\n",
+      "Array c contains 9 elements, of type int64.\n",
+      "Array d contains 12 elements, of type float64.\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Array a contains \" + str(a.size) + \" elements, of type \" + str(a.dtype) + \".\")\n",
+    "print(\"Array b contains \" + str(b.size) + \" elements, of type \" + str(b.dtype) + \".\")\n",
+    "print(\"Array c contains \" + str(c.size) + \" elements, of type \" + str(c.dtype) + \".\")\n",
+    "print(\"Array d contains \" + str(d.size) + \" elements, of type \" + str(d.dtype) + \".\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "39053fa1",
+   "metadata": {},
+   "source": [
+    "Part 4"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "0c6cfa82",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[1 2 3]\n",
+      " [4 5 6]\n",
+      " [7 8 9]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "x = a.reshape(3,3)\n",
+    "print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "36baf234",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[[ 1.  2.  3.]\n",
+      "  [ 4.  5.  6.]]\n",
+      "\n",
+      " [[ 7.  8.  9.]\n",
+      "  [10. 11. 12.]]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "y = b.reshape(2,2,3)\n",
+    "print(y)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "044b9edb",
+   "metadata": {},
+   "source": [
+    "Part 4"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "c3445aa5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The max of array a is 9. The max of array x is 9.\n",
+      "The min of array a is 1. The min of array x is 1.\n",
+      "The sum of array a is 45. The sum of array x is 45.\n",
+      "The mean of array a is 5.0. The min of array x is 5.0.\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"The max of array a is \" + str(a.max()) + \". The max of array x is \" + str(x.max()) + \".\")\n",
+    "print(\"The min of array a is \" + str(a.min()) + \". The min of array x is \" + str(x.min()) + \".\")\n",
+    "print(\"The sum of array a is \" + str(a.sum()) + \". The sum of array x is \" + str(x.sum()) + \".\")\n",
+    "print(\"The mean of array a is \" + str(a.mean()) + \". The min of array x is \" + str(x.mean()) + \".\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "e4f771e0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 2  4  6]\n",
+      " [ 8 10 12]\n",
+      " [14 16 18]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "p = c + x\n",
+    "print(p)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "f598eee2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[[ -2.   1.   6.]\n",
+      "  [ 13.  22.  33.]]\n",
+      "\n",
+      " [[ 46.  61.  78.]\n",
+      "  [ 97. 118. 141.]]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "q = (d * y) - 3\n",
+    "print(q)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "4ce79e7c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "False\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(a.shape == b.shape)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "52fd6be4",
+   "metadata": {},
+   "source": [
+    "Part 5"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "8fad023a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[0. 0. 0. 0. 0.]\n",
+      " [0. 0. 0. 0. 0.]\n",
+      " [0. 0. 0. 0. 0.]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = np.zeros((3,5))\n",
+    "print(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "b6eb77c2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[[-2.31584178e+077 -2.31584178e+077]\n",
+      "  [ 1.97626258e-323  0.00000000e+000]]\n",
+      "\n",
+      " [[ 0.00000000e+000  4.17201348e-309]\n",
+      "  [-2.31584178e+077  5.60612341e-309]]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "b = np.empty((2,2,2))\n",
+    "print(b)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "a5bf07ae",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[ 2  4  6  8 10 12 14 16]\n"
+     ]
+    }
+   ],
+   "source": [
+    "c = np.arange(2,17,2)\n",
+    "print(c)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "744973d8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[ 1  3  5  7  9 11 13 15]\n"
+     ]
+    }
+   ],
+   "source": [
+    "d = np.linspace(1, 15, 8, dtype=int)\n",
+    "print(d)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "fc9114da",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Beyonce is going to Slytherin!'"
+      ]
+     },
+     "execution_count": 25,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "names = ['Bobby Fisher', 'Beyonce', 'Arnold Schwarzenegger', 'Akira Kurosawa', 'Britney Spears', 'Alexander the Great', 'Chris Hemsworth', 'David Lynch', 'Madonna', 'Anthony Mackie']\n",
+    "houses = ['Griffindor', 'Hufflepuff', 'Slytherin', 'Ravenclaw']\n",
+    "\n",
+    "def sorting_hat(names, houses):\n",
+    "    anames = np.array(names)\n",
+    "    ahouses = np.array(houses)\n",
+    "    \n",
+    "    x = np.random.choice(anames)\n",
+    "    y = np.random.choice(ahouses)\n",
+    "    \n",
+    "    return str(x) + \" is going to \" + str(y) + \"!\"\n",
+    "\n",
+    "sorting_hat(names, houses)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "815a3ef0",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
